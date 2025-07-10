@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Example weapon: saw launcher -->
+  <ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>SawGun_SawLauncher</defName>
+    <label>saw launcher</label>
+    <description>A Saw Launcher.</description>
+    <possessionCount>1</possessionCount>
+    <graphicData>
+  <texPath>SawGun/Example_SawLauncher</texPath>
+  <graphicClass>Graphic_Single</graphicClass>
+</graphicData>
+    <soundInteract>Interact_Shotgun</soundInteract>
+    <weaponClasses>
+      <li>ShortShots</li>
+    </weaponClasses>
+    <weaponTags>
+      <li>ShortShots</li>
+      <li>PumpShotgun</li>
+    </weaponTags>
+    <statBases>
+      <WorkToMake>15000</WorkToMake>
+      <Mass>9.9</Mass>
+      <AccuracyTouch>0.85</AccuracyTouch>
+      <AccuracyShort>0.80</AccuracyShort>
+      <AccuracyMedium>0.70</AccuracyMedium>
+      <AccuracyLong>0.56</AccuracyLong>
+      <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>80</Steel>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <skillRequirements>
+        <Crafting>5</Crafting>
+      </skillRequirements>
+      <displayPriority>436</displayPriority>
+    </recipeMaker>
+    <verbs>
+  <li>
+    <verbClass>Verb_Shoot</verbClass>
+    <hasStandardCommand>true</hasStandardCommand>
+    <defaultProjectile>SawGun_Saw</defaultProjectile>
+        might be an issue here
+    <warmupTime>1.2</warmupTime>
+    <range>12.9</range>
+    <soundCast>SawGun_SawLauncher</soundCast>
+    <soundCastTail>GunTail_Heavy</soundCastTail>
+    <muzzleFlashScale>0</muzzleFlashScale>
+  </li>
+</verbs>
+    <tools>
+  <li>
+    <label>handle</label>
+    <capacities>
+      <li>Blunt</li>
+    </capacities>
+    <power>9</power>
+    <cooldownTime>2</cooldownTime>
+  </li>
+  <li>
+    <label>blade</label>
+    <capacities>
+      <li>Demolish</li>
+    </capacities>
+    <power>13</power>
+    <cooldownTime>2</cooldownTime>
+    <soundMeleeHit>SawGun_SawLauncherMelee</soundMeleeHit>
+    <soundMeleeMiss>SawGun_SawLauncher</soundMeleeMiss>
+  </li>
+</tools>
+  </ThingDef>
+
+        <!-- Example projectile: saw blade -->
+    <ThingDef ParentName="BaseBullet">
+    <defName>SawGun_Saw</defName>
+    <label>saw blade</label>
+    <graphicData>
+  <texPath>SawGun/Example_SawBlade</texPath>
+  <graphicClass>Graphic_Single</graphicClass>
+</graphicData>
+    <projectile>
+  <damageDef>SawGun_Saw</damageDef>
+  <damageAmountBase>25</damageAmountBase>
+  <stoppingPower>1.5</stoppingPower>
+  <armorPenetrationBase>0.19</armorPenetrationBase>
+  <speed>55</speed>
+</projectile>
+  </ThingDef>
+
+</Defs>
